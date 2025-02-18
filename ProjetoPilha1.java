@@ -1,57 +1,65 @@
-package lista02;
+class Pilha {
+private int topo;
+private int[] elementos;
+private int capacidade;
+public Pilha(int capacidade) {
+this.capacidade = capacidade;
+this.elementos = new int[capacidade];
+this.topo = -1; // Indica que a pilha está vazia
+}
+public boolean isEmpty() {
+return topo == -1;
 
-import util.ListaArray;
+}
+public boolean isFull() {
+return topo == capacidade - 1;
+}
+public void push(int elemento) {
+if (isFull()) {
+System.out.println("Erro: Pilha cheia!");
+return;
+}
+elementos[++topo] = elemento;
+}
+public int pop() {
+if (isEmpty()) {
+System.out.println("Erro: Pilha vazia!");
+return -1; // Indicativo de erro
+}
+return elementos[topo--];
+}
+public int peek() {
+if (isEmpty()) {
+System.out.println("Erro: Pilha vazia!");
+return -1;
+}
+return elementos[topo];
+}
+public int size() {
+return topo + 1;
+}
+public void imprimirPilha() {
+if (isEmpty()) {
+System.out.println("A pilha está vazia.");
 
-public class Main {
-	public static void main(String[] args) {
-// Criando uma instância da ListaArray
-		ListaArray lista = new ListaArray();
-
-// Adicionando elementos
-		System.out.println("Adicionando elementos:");
-		lista.adicionar("Elemento 1");
-		lista.adicionar("Elemento 2");
-		lista.adicionar("Elemento 3");
-		lista.adicionar("Elemento 4"); // Deve expandir a lista
-
-// Exibindo os elementos da lista
-		System.out.println("Lista após adições:");
-		for (int i = 0; i < lista.obterNumElementos(); i++) {
-			System.out.println("Posição " + i + ": " + lista.obter(i));
-		}
-
-// Adicionando um elemento em uma posição específica
-		System.out.println("\nAdicionando 'Elemento Extra' na posição 2:");
-		lista.adicionar("Elemento Extra", 2);
-
-// Exibindo a lista novamente
-		System.out.println("Lista após inserção:");
-		for (int i = 0; i < lista.obterNumElementos(); i++) {
-			System.out.println("Posição " + i + ": " + lista.obter(i));
-		}
-
-// Removendo um elemento pela posição
-		System.out.println("\nRemovendo o elemento da posição 1:");
-		lista.remover(1);
-
-// Exibindo a lista após remoção
-		System.out.println("Lista após remoção:");
-		for (int i = 0; i < lista.obterNumElementos(); i++) {
-			System.out.println("Posição " + i + ": " + lista.obter(i));
-		}
-
-// Buscando a posição de um elemento
-		String buscar = "Elemento Extra";
-		int posicao = lista.posicaoDe(buscar);
-		System.out.println("\nPosição de '" + buscar + "': " + (posicao != -1 ? posicao : "Não encontrado"));
-
-// Removendo um elemento pelo objeto
-		System.out.println("\nRemovendo '" + buscar + "': " + lista.remover(buscar));
-
-// Exibindo a lista final
-		System.out.println("Lista final:");
-		for (int i = 0; i < lista.obterNumElementos(); i++) {
-			System.out.println("Posição " + i + ": " + lista.obter(i));
-		}
-	}
+return;
+}
+System.out.print("Pilha: ");
+for (int i = 0; i <= topo; i++) {
+System.out.print(elementos[i] + " ");
+}
+System.out.println();
+}
+}
+public class TestePilha {
+public static void main(String[] args) {
+Pilha pilha = new Pilha(5);
+pilha.push(10);
+pilha.push(20);
+pilha.push(30);
+pilha.imprimirPilha();
+System.out.println("Topo da pilha: " + pilha.peek());
+System.out.println("Removendo: " + pilha.pop());
+pilha.imprimirPilha();
+}
 }
