@@ -1,0 +1,51 @@
+1-
+B) Arrays permitem acesso direto a qualquer elemento pelo índice, enquanto Listas Encadeadas requerem percorrer os nós para acessar um elemento específico.
+Explicação:
+Arrays possuem tamanho fixo (não podem ter seu tamanho alterado após a criação), mas permitem acesso direto aos elementos usando um índice, o que torna o acesso muito rápido. 
+Listas Encadeadas, por outro lado, consistem em uma sequência de nós onde cada nó contém um elemento e um ponteiro para o próximo nó. Para acessar um elemento específico, é necessário percorrer a lista a partir do início (ou de onde se encontra na lista), o que torna o acesso mais lento em comparação com um array.
+
+2-
+D) int vetor[5]; não é válida.
+Explicação: 
+No Java, a sintaxe para declarar e inicializar arrays é diferente da de outras linguagens como C ou C++. No Java, os arrays devem ser declarados utilizando a sintaxe de colchetes [] logo após o tipo de dado, e a inicialização do tamanho do array deve ser feita de maneira apropriada (usando new para arrays dinâmicos ou diretamente com valores entre chaves {}).
+
+3-
+C) 9
+Explicação: 
+Em Java, os arrays são indexados a partir de 0.
+
+4-
+C) Será lançada uma exceção ArrayIndexOutOfBoundsException.
+Explicação: 
+No código fornecido o array numeros é declarado com 3 elementos, então os índices válidos para esse array são 0, 1 e 2. Quando o código tenta acessar o índice 3, ele está tentando acessar uma posição fora do limite do array, o que resulta em uma exceção do tipo ArrayIndexOutOfBoundsException.
+
+5-
+E) Se arrayInterno estiver cheio, um novo array de tamanho maior é criado e os elementos são copiados.
+Explicação:
+Em uma implementação típica de ListaArray, o arrayInterno é usado para armazenar os elementos da lista. Esse array geralmente tem um tamanho fixo inicialmente, mas, quando o limite de capacidade é alcançado, o comportamento comum é criar um novo array de tamanho maior (geralmente dobrando a capacidade do array atual) e copiar os elementos do array antigo para o novo.
+
+6-
+C) A busca sequencial compara cada elemento do array com o valor procurado, sendo O(n) no pior caso.
+Explicação: 
+Na busca sequencial (ou linear), a operação começa a partir do primeiro elemento do array e verifica cada elemento, um por um, até encontrar o valor desejado ou até o final do array.
+
+7-
+C) O método adicionar verificará a necessidade de crescimento do array interno e realocará memória se necessário.
+Explicação:
+Com base no código fornecido, onde a classe ListaArray tem um array interno que armazena os elementos e é inicializado com um tamanho de 3, o comportamento esperado para esse tipo de estrutura é que, ao adicionar um quarto elemento, o array interno precisaria ser redimensionado. Em implementações típicas de listas dinâmicas, como ArrayList em Java, se o array interno estiver cheio, o método adicionar (ou equivalente) verifica se há espaço suficiente e, se necessário, cria um novo array com capacidade maior (geralmente dobrando o tamanho do array atual) e copia os elementos para o novo array.
+
+8-
+B) Move todos os elementos subsequentes para a esquerda para ocupar o espaço do elemento removido.
+Explicação:
+Em uma implementação típica de ListaArray, ao remover um elemento em uma posição específica (usando o método remover(int posicao)), todos os elementos subsequentes àquela posição são deslocados para a esquerda para preencher o espaço deixado pelo elemento removido. Isso garante que não haja "buracos" no array e que a sequência de elementos permaneça contínua.
+
+9-
+B) O array armazena referências para os objetos na memória heap.
+Explicação:
+Quando criamos um array de objetos em Java, o que realmente acontece é que o array armazena referências para os objetos que estão localizados na memória heap (onde os objetos em Java são alocados). O array em si, na memória stack, contém apenas essas referências (ponteiros para os locais na memória heap), e não os próprios objetos.
+
+10-
+B) O acesso a um elemento de um array pelo índice é O(1), enquanto a inserção no meio é O(n).
+Explicação:
+Acesso pelo índice: O acesso a um elemento de um array usando o índice é uma operação de tempo constante O(1), pois o array é uma estrutura de dados que permite acesso direto a qualquer posição, já que os elementos são armazenados de forma contígua na memória.
+Inserção no meio: A inserção de um elemento no meio de um array, no entanto, exige que todos os elementos à direita da posição de inserção sejam deslocados para abrir espaço para o novo elemento. Isso faz com que a operação de inserção no meio seja O(n), onde n é o número de elementos à direita da posição de inserção.
