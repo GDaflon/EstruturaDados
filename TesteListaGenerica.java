@@ -23,8 +23,15 @@ public class TesteListaGenerica {
 
 	   ListaGenerica<Aluno> listaAluno = new ListaGenerica<>(3);
 	   Aluno alu = new Aluno(123,"Luiz"); 
+	   Aluno alu2 = new Aluno(345,"Luiza"); 
+	   Aluno alu3 = new Aluno(101,"Carla"); 	
+	   Aluno alu4 = new Aluno(010,"Carlos"); 
 	   
 	   listaAluno.adicionar(alu);
+	   listaAluno.adicionar(alu2);
+           listaAluno.adicionar(alu3);
+           listaAluno.adicionar(alu4);
+
 	   listaAluno.exibir();
    }
 }
