@@ -1,0 +1,2 @@
+ABC-1234;Sandero;Renault;2023;66900.0
+ABC-4321;Logan;Renault;2015;29500.0
